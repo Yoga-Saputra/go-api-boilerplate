@@ -59,6 +59,7 @@ const (
 	APIWarningLockedOutWallet         APIStatusCode = 2406
 	APIWarningLockedInWallet          APIStatusCode = 2407
 	APIWarningTransferTaskNotFinished APIStatusCode = 2408
+	TOOMANYREQUESTS                   APIStatusCode = 2409
 )
 
 // Variable mapping from http status code to API status code

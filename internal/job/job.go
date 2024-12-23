@@ -4,7 +4,7 @@ import (
 	"github.com/Yoga-Saputra/go-boilerplate/internal/job/republish"
 	"github.com/Yoga-Saputra/go-boilerplate/pkg/kafadapter"
 	"github.com/Yoga-Saputra/go-boilerplate/pkg/kemu"
-	"github.com/go-redis/cache/v8"
+	"github.com/go-redis/cache/v9"
 	"github.com/hibiken/asynq"
 )
 

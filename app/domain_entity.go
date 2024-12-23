@@ -27,6 +27,6 @@ func doEntV1Register(args *AppArgs) {
 			GADP,
 			printOutUp,
 		)
-		ucv1wallethttp.RegisterRoute(API.RouteGroup["v1"], *ucv1walletsvc, kemu)
+		ucv1wallethttp.RegisterRoute(API.RouteGroup["v1"], *ucv1walletsvc, kemu, Cache2.Rs)
 	}
 }
