@@ -1,0 +1,3 @@
+[submodule "sw_pb_go"]
+	path = sw_pb_go
+	url = https://your-token@github.com/goxsx/sw_pb_go

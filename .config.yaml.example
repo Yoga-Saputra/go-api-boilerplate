@@ -1,0 +1,56 @@
+app:
+  name: Go-Boilerplate
+  desc: Services of Go-Boilerplate
+  port: 4040
+  env: development
+  prefork: false
+  timeZone: Asia/Manil
+  auwi: 3
+  programFile: /usr/sbin/go-boilerplate
+  workingDir: /etc/go-boilerplate
+
+database: 
+  host: 
+  port: 
+  user: 
+  password: 
+  name: 
+  dialect: postgres
+
+  resolver: 
+    sources: 
+      host: 
+      port: 
+      user: 
+      password: 
+      name: 
+      dialect: 
+      identifier: 
+
+cache:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 
+    database: 1
+    maxRetries: 3
+    poolSize: 9
+
+queue:
+  option:
+    concurrency: 50
+    shutdownTimeout: 10
+    healthCheckInterval: 15
+    strictPriority: false
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 
+    database: 0
+    maxRetries: 3
+    poolSize: 9
+
+kafka:
+  servers:
+    

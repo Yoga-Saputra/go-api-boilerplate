@@ -1,0 +1,29 @@
+# systemd service for managing all go-boilerplate service on this system.
+[Unit]
+Description=go-boilerplate System Service
+
+ConditionPathExists=/usr/sbin/go-boilerplate
+ConditionPathIsDirectory=/etc/go-boilerplate
+ConditionPathExists=/etc/rsyslog.d/syslog-go-boilerplate.conf
+ConditionPathIsDirectory=/var/log/go-boilerplate
+
+After=network.target postgresql.service redis-server.service
+Wants=network-online.target postgresql.service redis-server.service
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=10
+
+WorkingDirectory=/etc/go-boilerplate
+ExecStart=/usr/sbin/go-boilerplate --run
+
+# Comment this option consider to this error "Standard output type syslog is obsolet"
+# StandardOutput=syslog
+# StandardError=syslog
+# SyslogIdentifier=go-boilerplate
+
+Environment=debug_option
+
+[Install]
+WantedBy=multi-user.target
