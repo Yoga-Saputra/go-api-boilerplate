@@ -3,29 +3,11 @@ package helper
 import (
 	"context"
 	"fmt"
-	"math"
 	"reflect"
 	"time"
 
 	"github.com/go-redis/cache/v9"
 )
-
-func CheckBetValid(category string, wAmount, wlAmount float64) (betValid float64) {
-	switch {
-	case InArray(category, []string{"S", "L", "P"}):
-		betValid = wAmount
-	case InArray(category, []string{"C", "SB", "LG"}):
-		if math.Abs(wlAmount) > wAmount {
-			betValid = wAmount
-		} else {
-			betValid = math.Abs(wlAmount)
-		}
-	case wAmount == wlAmount || InArray(category, []string{"A", "T"}):
-		betValid = 0
-	}
-
-	return
-}
 
 func InArray(v interface{}, in interface{}) (ok bool) {
 	val := reflect.Indirect(reflect.ValueOf(in))
